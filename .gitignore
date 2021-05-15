@@ -106,3 +106,4 @@ dist
 /public/back
 /node_modules
 /app-old.js
+/.env
