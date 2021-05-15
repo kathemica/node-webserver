@@ -43,20 +43,21 @@ app.get("/hello-world", (req, res, next) => {
     res.send(`hello world at port ${process.env.PORT}`);
 });
 
-app.get(['/', '/index', '/home'], (req, res, next) => {
-    res.render(`home`, pageData);
-});
+// app.get(['/', '/index', '/home'], (req, res, next) => {
+//     res.render(`home`, pageData);
+// });
 
-app.get("/generic", (req, res, next) => {    
-    res.render(`generic`, pageData);
-});
+// app.get("/generic", (req, res, next) => {    
+//     res.render(`generic`, pageData);
+// });
 
-app.get("/elements", (req, res, next) => {    
-    res.render(`elements`, pageData);
-});
+// app.get("/elements", (req, res, next) => {    
+//     res.render(`elements`, pageData);
+// });
 
 app.get("*", (req, res, next) => {    
-    res.render(`404`);
+    // res.render(`404`);
+    res.sendFile(__dirname + '/public/index.html')
 });
 // ------------------------------------------------
 // Running
