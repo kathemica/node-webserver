@@ -40,7 +40,7 @@ const pageData = {
 // Serving
 // ------------------------------------------------
 app.get("/hello-world", (req, res, next) => {
-    res.send(`hello world atprocess.env.PORT${port}`);
+    res.send(`hello world at port ${process.env.PORT}`);
 });
 
 app.get(['/', '/index', '/home'], (req, res, next) => {
@@ -61,6 +61,6 @@ app.get("*", (req, res, next) => {
 // ------------------------------------------------
 // Running
 // ------------------------------------------------
-app.listen(port, () => {
-  console.log(`Server is running atprocess.env.PORT${port}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Server is running at port ${process.env.PORT}`);
 });
