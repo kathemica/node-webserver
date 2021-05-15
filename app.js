@@ -9,7 +9,7 @@ import hbs from 'hbs';
 // ------------------------------------------------
 //adding environment var
 dotenv.config();
-port = process.env.PORT || 8080;
+process.env.PORT = process.env.PORT || 8080;
 
 //adding express
 const app = express();
@@ -40,7 +40,7 @@ const pageData = {
 // Serving
 // ------------------------------------------------
 app.get("/hello-world", (req, res, next) => {
-    res.send(`hello world at port ${port}`);
+    res.send(`hello world atprocess.env.PORT${port}`);
 });
 
 app.get(['/', '/index', '/home'], (req, res, next) => {
@@ -62,5 +62,5 @@ app.get("*", (req, res, next) => {
 // Running
 // ------------------------------------------------
 app.listen(port, () => {
-  console.log(`Server is running at port ${port}`);
+  console.log(`Server is running atprocess.env.PORT${port}`);
 });
